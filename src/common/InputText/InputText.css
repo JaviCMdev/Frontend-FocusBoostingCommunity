@@ -1,0 +1,12 @@
+.inputDesign {
+    width: 28em;
+    height: 2em;
+    border-radius: 1em;
+    margin: 0.5em;
+    text-align: center;
+    color: white;
+}
+
+.inputDesignError {
+    border: 0.2em solid red;
+}

@@ -1,0 +1,18 @@
+.headerDesign {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+.logoDesignHeader {
+    height: 10vh;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
