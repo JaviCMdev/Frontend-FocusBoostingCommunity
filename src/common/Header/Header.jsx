@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css';
+import Logo from './home.png';
 import { useSelector, useDispatch } from "react-redux";
 import { userData, logout } from "../../pages/User/userSlice";
 
@@ -20,23 +21,28 @@ export const Header = () => {
         dispatch(logout({ userPass: initial }))
         navigate("/")
     }
+    const ResetHome = () => {
+        navigate("/")
+    }
 
 
     return (
         <div className='headerDesign'>
+            <div onClick={() => ResetHome()} className='logoDesignHeader'><img id="logoHome" className='homeAvatar' src={Logo} alt="Home" /></div>
+            <div className='blankSpace'></div>
             <div className='headerLinksDesign'>
                 {datosReduxUsuario.userPass.rol === "admin" &&
-                    <div onClick={() => navigate("/admin")} className='linkDesign'>admin</div>
+                    <div onClick={() => navigate("/admin")} className='linkDesign'>ADMIN</div>
                 }
                 {datosReduxUsuario.userPass.token !== "" ?
                     (<>
                         <div onClick={() => navigate("/profile")} className='linkDesign' >{datosReduxUsuario.userPass?.name}</div>
-                        <div className='linkDesign' onClick={() => logOff()}>logout</div>
+                        <div className='linkDesign' onClick={() => logOff()}>LOG OUT</div>
                     </>)
                     : (
                         <>
-                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/login") }, 200)}>login</div>
-                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/register") }, 200)}>register</div>
+                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/login") }, 200)}>LOGIN</div>
+                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/register") }, 200)}>REGISTER</div>
                         </>
                     )
                 }

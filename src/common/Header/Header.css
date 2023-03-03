@@ -5,14 +5,43 @@
     align-items: center;
     height: 10vh;
     width: 100vw;
-    background: rgb(238, 174, 202);
-    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    background: #363636;
 }
 
+.headerLinksDesign {
+    height: 10vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
 .logoDesignHeader {
     height: 10vh;
     width: 10vw;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.blankSpace {
+    height: 10vh;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeAvatar {
+    height: 8vh;
+}
+
+.linkDesign {
+    font-family: 'Open Sans';
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    margin-right: 3em;
 }
