@@ -1,4 +1,11 @@
+@font-face {
+    font-family: "Contrax";
+    src: url("../Fonts/Contrax.otf");
+}
+
 .headerDesign {
+    top: 0%;
+    position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -37,7 +44,7 @@
 }
 
 .linkDesign {
-    font-family: 'Open Sans';
+    font-family: 'Contrax';
     font-weight: bolder;
     color: white;
     cursor: pointer;

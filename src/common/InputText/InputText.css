@@ -1,4 +1,10 @@
+@font-face {
+    font-family: "Contrax";
+    src: url("../Fonts/Contrax.otf");
+}
+
 .inputDesign {
+    font-family: "Contrax";
     width: 28em;
     height: 2em;
     border-radius: 1em;

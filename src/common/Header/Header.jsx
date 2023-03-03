@@ -32,17 +32,17 @@ export const Header = () => {
             <div className='blankSpace'></div>
             <div className='headerLinksDesign'>
                 {datosReduxUsuario.userPass.rol === "admin" &&
-                    <div onClick={() => navigate("/admin")} className='linkDesign'>ADMIN</div>
+                    <div onClick={() => navigate("/admin")} className='linkDesign'>Admin</div>
                 }
                 {datosReduxUsuario.userPass.token !== "" ?
                     (<>
                         <div onClick={() => navigate("/profile")} className='linkDesign' >{datosReduxUsuario.userPass?.name}</div>
-                        <div className='linkDesign' onClick={() => logOff()}>LOG OUT</div>
+                        <div className='linkDesign' onClick={() => logOff()}>Logout</div>
                     </>)
                     : (
                         <>
-                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/login") }, 200)}>LOGIN</div>
-                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/register") }, 200)}>REGISTER</div>
+                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/login") }, 200)}>Login</div>
+                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/register") }, 200)}>Register</div>
                         </>
                     )
                 }

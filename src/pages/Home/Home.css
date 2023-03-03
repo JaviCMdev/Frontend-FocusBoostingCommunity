@@ -1,14 +1,22 @@
 .homeDesign {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
-    height: 85vh;
-    width: 100vw;
-    background-color: rgb(28, 28, 28);
+    width: 98vw;
+    background-color: rgb(28, 28, 28);;
 }
 
 .bannerHome {
     display: flex;
-    width: 100vw;
+    width: 98vw;
+}
+
+.textBox {
+    text-align: center;
+    margin-top: 20px;
+    width: 40vw;
+    padding: 5vw;
+    background-color: rgb(15, 15, 15);
+    border-radius: 10px;
 }
