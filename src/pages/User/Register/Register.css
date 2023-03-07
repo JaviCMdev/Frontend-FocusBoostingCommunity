@@ -2,6 +2,40 @@
     font-family: "Contrax";
     src: url("../Fonts/Contrax.otf");
 }
+
 .registerDesign {
-    padding-top: 10vw;
+    /* padding-top: 10vw; */
+    font-family: 'Contrax';
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(28, 28, 28);
+}
+
+.loginButtonDesign {
+    font-family: 'Contrax';
+    height: 3em;
+    width: 8em;
+    text-align: center;
+    background: #a929f7;
+    cursor: pointer;
+    border-radius: 1em;
+    transition: 0.3s;
+}
+
+.loginButtonDesign:hover {
+    font-family: 'Contrax';
+    height: 4em;
+    width: 9em;
+    transition: 0.3s;
+    background: #be5afb;
+}
+
+.errorText {
+    font-family: 'Contrax';
+    color: red;
 }
