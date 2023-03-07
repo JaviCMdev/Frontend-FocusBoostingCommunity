@@ -23,5 +23,37 @@
     height: 11vh;
     width: 16vw;
     transition: 0.3s;
-    color: #a929f7
+    color: #a929f7;
+    margin: 0;
+}
+@media only screen and (max-width: 820px) {
+    .cardRaidDesign {
+        width: 18vw;
+        font-size: smaller;
+    }
+}
+@media only screen and (max-width: 820px) {
+    .cardRaidDesign:hover {
+        width: 19vw;
+        font-size: smaller;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .cardRaidDesign {
+        font-size: smaller;
+    }
+}
+@media only screen and (max-width: 412px) {
+    .cardRaidDesign {
+        font-size: 0.6em;
+        width: 30vw;
+        height: 7vh;
+    }
+}
+@media only screen and (max-width: 412px) {
+    .cardRaidDesign:hover {
+        font-size: 0.6em;
+        width: 31vw;
+        height: 8vh;
+    }
 }

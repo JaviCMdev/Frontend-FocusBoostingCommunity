@@ -4,20 +4,19 @@ import { mythicplusData, selectmythicplus } from '../../common/CardMythicplus/my
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import './Services.css';
-import { getMythicplus, getRaid } from '../../services/apiCalls';
+import { getMythicplus, getRaid, getMount } from '../../services/apiCalls';
 import { all } from 'axios';
 import { CardRaid } from '../../common/CardRaid/CardRaid';
 import { raidData, selectraid } from '../../common/CardRaid/raidSlice';
-
-
-
+import { CardMount } from '../../common/CardMount/CardMount';
+import { mountData, selectmount } from '../../common/CardMount/mountSlice';
 
 export const Services = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [allMythicplus, setAllMythicplus] = useState([]);
     const [allRaid, setAllRaid] = useState([]);
-
+    const [allMount, setAllMount] = useState([]);
 
     useEffect(() => {
         if (allMythicplus.length === 0) {
@@ -40,6 +39,17 @@ export const Services = () => {
         };
 
     }, [allRaid]);
+
+    useEffect(() => {
+        if (allMount.length === 0) {
+            getMount()
+                .then(resultado => {
+                    setAllMount(resultado.data);
+                })
+                .catch(error => console.log(error));
+        };
+
+    }, [allMount]);
 
     return (
         <div className="servicesDesign">
@@ -68,6 +78,17 @@ export const Services = () => {
                 )}
             </div>
             <div className="bannerDesign"><img className="bannerImgDesign" src="https://novaboosting.com/img/c632593d-0499-4716-9b62-465e3a248ef4/post-7-fw.jpg" alt="BannerMount" /></div>
+            <div className="cardsDesign">
+                {allMount.map(
+                    mount => {
+                        return (
+                            <div onClick={() => Choosen(mount)} key={mount._id}>
+                                <CardMount mount={mount} />
+                            </div>
+                        )
+                    }
+                )}
+            </div>
         </div>
     )
 };

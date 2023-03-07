@@ -12,3 +12,7 @@ export const getMythicplus = async () => {
 export const getRaid = async () => {
     return await axios.get(`${root}raid/getall`);
 }
+
+export const getMount = async () => {
+    return await axios.get(`${root}mount/getall`);
+}
