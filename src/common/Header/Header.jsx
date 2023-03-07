@@ -29,7 +29,9 @@ export const Header = () => {
     return (
         <div className='headerDesign'>
             <div onClick={() => ResetHome()} className='logoDesignHeader'><img id="logoHome" className='homeAvatar' src={Logo} alt="Home" /></div>
-            <div className='blankSpace'></div>
+            <div className='servicesDesign'>
+                <div className='servicesText' onClick={() => setTimeout(() => { navigate("/services") }, 200)}>Services</div>
+            </div>
             <div className='headerLinksDesign'>
                 {datosReduxUsuario.userPass.rol === "admin" &&
                     <div onClick={() => navigate("/admin")} className='linkDesign'>Admin</div>

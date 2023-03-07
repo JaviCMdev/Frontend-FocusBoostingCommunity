@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Contrax";
+    src: url("../Fonts/Contrax.otf");
+}
+.cardServiceDesign {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Contrax";
+    text-align: center;
+    height: 5em;
+    width: 20em;
+    color: white;
+    background-color: rgb(28, 28, 28);
+    border-radius: 1em;
+    margin: 1em;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.cardServiceDesign:hover {
+    height: 6em;
+    width: 25em;
+    transition: 0.3s;
+    color: #a929f7
+}

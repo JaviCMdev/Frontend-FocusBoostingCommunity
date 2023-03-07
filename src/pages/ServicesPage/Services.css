@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Contrax";
+    src: url("../../common/Fonts/Contrax.otf");
+}
+.serviceDesign {
+    padding-top: 10vh;
+    background-image: url(../Home/wallpaper.jpg);
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

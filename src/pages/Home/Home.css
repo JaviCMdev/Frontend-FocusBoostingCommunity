@@ -1,10 +1,21 @@
+@font-face {
+    font-family: "Contrax";
+    src: url("../Fonts/Contrax.otf");
+}
+
 .homeDesign {
+    background-image: url(./wallpaper.jpg);
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 98vw;
-    background-color: rgb(28, 28, 28);;
+    background-color: rgb(28, 28, 28);
 }
 
 .bannerHome {
@@ -13,10 +24,19 @@
 }
 
 .textBox {
+    font-family: "Contrax";
     text-align: center;
     margin-top: 20px;
     width: 40vw;
     padding: 5vw;
     background-color: rgb(15, 15, 15);
     border-radius: 10px;
+}
+@media only screen and (max-width: 768px) {
+    .textBox {
+        margin-top: 20px;
+        padding: 5vw;
+        width: 98vw;
+        font-size: smaller;
+    }
 }

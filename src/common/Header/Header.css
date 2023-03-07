@@ -23,6 +23,7 @@
     justify-content: flex-end;
     align-items: flex-end;
 }
+
 .logoDesignHeader {
     height: 10vh;
     width: 10vw;
@@ -31,12 +32,26 @@
     align-items: center;
 }
 
-.blankSpace {
+.servicesDesign {
     height: 10vh;
     width: 70vw;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.servicesText {
+    font-family: 'Contrax';
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    font-size: 2em;
+    margin-top: 0.5em;
+    margin-right: 3em;
+}
+
+.servicesText:hover {
+    color: #a929f7
 }
 
 .homeAvatar {
@@ -51,4 +66,7 @@
     font-size: 2em;
     margin-bottom: 0.5em;
     margin-right: 3em;
+}
+.linkDesign:hover {
+    color: #a929f7
 }
