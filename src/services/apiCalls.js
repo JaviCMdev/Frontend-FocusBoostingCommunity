@@ -5,6 +5,10 @@ export const postLogin = async (credenciales) => {
     return await axios.post(`${root}users/login`, credenciales);
 };
 
-export const getServices = async () => {
-    return await axios.get(`${root}services/getall`);
+export const getMythicplus = async () => {
+    return await axios.get(`${root}mythicplus/getall`);
+}
+
+export const getRaid = async () => {
+    return await axios.get(`${root}raid/getall`);
 }

@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Contrax";
+    src: url("../Fonts/Contrax.otf");
+}
+.cardMythicplusDesign {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Contrax";
+    text-align: center;
+    height: 10vh;
+    width: 15vw;
+    color: white;
+    background-color: rgb(28, 28, 28);
+    border-radius: 1em;
+    margin: 0.5vw;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.cardMythicplusDesign:hover {
+    height: 11vh;
+    width: 16vw;
+    transition: 0.3s;
+    color: #a929f7
+}

@@ -2,7 +2,10 @@
     font-family: "Contrax";
     src: url("../../common/Fonts/Contrax.otf");
 }
-.serviceDesign {
+
+.servicesDesign {
+    display: flex;
+    width: 99vw;
     padding-top: 10vh;
     background-image: url(../Home/wallpaper.jpg);
     background-position-x: center;
@@ -10,8 +13,27 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardsDesign {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+.bannerDesign {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    margin-left: 35vw;
+    margin-right: 35vw;
+    /* width: 100vw; */
+}
+
+.bannerImgDesign {
+    width: 30vw;
+    border-radius: 1em;
 }

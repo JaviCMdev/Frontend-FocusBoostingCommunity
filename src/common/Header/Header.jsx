@@ -29,7 +29,7 @@ export const Header = () => {
     return (
         <div className='headerDesign'>
             <div onClick={() => ResetHome()} className='logoDesignHeader'><img id="logoHome" className='homeAvatar' src={Logo} alt="Home" /></div>
-            <div className='servicesDesign'>
+            <div className='servicesDesignHeader'>
                 <div className='servicesText' onClick={() => setTimeout(() => { navigate("/services") }, 200)}>Services</div>
             </div>
             <div className='headerLinksDesign'>

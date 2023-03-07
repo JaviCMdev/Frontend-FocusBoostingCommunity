@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const serviceSlice = createSlice({
-    name: 'service',
+export const raidSlice = createSlice({
+    name: 'raid',
     initialState: {
       choosen : {},
-      services: []
+      raid: []
     },
     reducers: {
-      select: (state, action) => {
+      selectraid: (state, action) => {
         return {
           ...state,
           ...action.payload
@@ -22,6 +22,6 @@ export const serviceSlice = createSlice({
     }
     
 });
-export const { select, find } = serviceSlice.actions;
-export const serviceData = (state) => state.service;
-export default serviceSlice.reducer;
+export const { selectraid, find } = raidSlice.actions;
+export const raidData = (state) => state.raid;
+export default raidSlice.reducer;
