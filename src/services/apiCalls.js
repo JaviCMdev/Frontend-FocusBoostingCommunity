@@ -19,3 +19,7 @@ export const getRaid = async () => {
 export const getMount = async () => {
     return await axios.get(`${root}mount/getall`);
 }
+
+export const getServer = async () => {
+    return await axios.get(`${root}servers/getall`);
+}

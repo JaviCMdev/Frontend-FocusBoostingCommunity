@@ -25,6 +25,18 @@ export const errorCheck = (name, value) => {
             } else {
                 return '';
             }
+            case 'battletag':
+            if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+#[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(value) ) {
+                return ("Formato de texto inválido"); 
+            } else {
+                return '';
+            };
+            case 'discord':
+            if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+#[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(value) ) {
+                return ("Formato de texto inválido"); 
+            } else {
+                return '';
+            };
         default:
             console.log("what are you sending to me????");
             break;

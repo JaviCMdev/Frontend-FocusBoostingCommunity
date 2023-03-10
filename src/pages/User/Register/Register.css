@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Contrax";
-    src: url("../Fonts/Contrax.otf");
+    src: url("../../../common/Fonts/Contrax.otf");
 }
 
 .registerDesign {
@@ -25,6 +25,7 @@
     cursor: pointer;
     border-radius: 1em;
     transition: 0.3s;
+    margin: 1em;
 }
 
 .loginButtonDesign:hover {
@@ -38,4 +39,20 @@
 .errorText {
     font-family: 'Contrax';
     color: red;
+}
+
+.serverText {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(28, 28, 28);
+    width: 10em;
+}
+
+.serverText:hover {
+    color: #a929f7;
+}
+
+.serverBox {
+    padding-top: 10em;
 }
