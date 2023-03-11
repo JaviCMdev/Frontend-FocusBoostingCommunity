@@ -2,14 +2,35 @@
     font-family: "Contrax";
     src: url("../Fonts/Contrax.otf");
 }
+
 .profileDesign {
+    text-align: center;
+    color: white;
+    font-family: 'Contrax';
     padding-top: 10vw;
+    height: 100vh;
+    /* width: 100vw; */
+    background-color: rgb(28, 28, 28);
 }
-.rosterDesign {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* padding-left: 20vw;
-    padding-right: 20vw; */
+
+.mplusTable {
+    padding-top: 1em;
+    border-collapse: collapse;
     width: 100vw;
+}
+
+.titletableText {
+    font-size: 2em;
+    color: #a929f7;
+    text-align: center;
+}
+
+.rosterDesign {
+    border: 3px solid #a929f7;
+    margin: 0 auto;
+}
+
+th,
+td {
+    padding: 1em;
 }

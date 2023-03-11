@@ -59,3 +59,21 @@ export const allMplus = async (token) => {
     }
     return await axios.get(`${root}buymythicplus/getall`, config);
 }
+
+export const allRaids = async (token) => {
+    let config = {
+        headers: { 
+            'Authorization': 'Bearer ' + token
+          }
+    }
+    return await axios.get(`${root}buyraid/getall`, config);
+}
+
+export const allMounts = async (token) => {
+    let config = {
+        headers: { 
+            'Authorization': 'Bearer ' + token
+          }
+    }
+    return await axios.get(`${root}buymount/getall`, config);
+}

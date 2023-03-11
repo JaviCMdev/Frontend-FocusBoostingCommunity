@@ -5,20 +5,12 @@ export const CardPurchasemplus = ({ mplus }) => {
 
     return (
         <tr className='cardPurchasemplusDesign'>
-            <tr>
-                <th>Nivel de mitica</th>
-                <th>Nombre de comprador</th>
-            </tr>
-            <tr>
                 <td>{mplus.idMythicplus.name !== '' ? mplus.idMythicplus.name : "ID Mythic+ no disponible"}</td>
-                <td>{mplus.idUser.name !== '' ? mplus.idUser.name : "ID User no disponible"}</td>
-            </tr>
+                <td>{mplus.idMythicplus.price !== '' ? mplus.idMythicplus.price : "ID User no disponible"}g</td>
+                <td>{mplus.idMythicplus.pending ? "No" : "Si"}</td>
+                <td>{mplus.idMythicplus.claimed ? "No" : "Si"}</td>
+                <td>{mplus.idMythicplus.done ? "No" : "Si"}</td>
+                <td>{mplus.idMythicplus.claimedby!== '' ? mplus.idMythicplus.claimedby : "Aun sin reclamar"}</td>
         </tr>
     )
 }
-
-
-
-
-{/* <div>Nivel de mitica = {mplus.idMythicplus.name !== '' ? mplus.idMythicplus.name : "ID Mythic+ no disponible"}</div>
-<div>Nombre de comprador: {mplus.idUser.name !== '' ? mplus.idUser.name : "ID User no disponible"}</div> */}
