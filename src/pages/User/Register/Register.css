@@ -16,7 +16,7 @@
     background-color: rgb(28, 28, 28);
 }
 
-.loginButtonDesign {
+#serverbuttonDesign {
     font-family: 'Contrax';
     height: 3em;
     width: 8em;
@@ -28,7 +28,7 @@
     margin: 1em;
 }
 
-.loginButtonDesign:hover {
+#serverbuttonDesign:hover {
     font-family: 'Contrax';
     height: 4em;
     width: 9em;

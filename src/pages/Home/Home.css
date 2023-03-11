@@ -29,7 +29,7 @@
     font-family: "Contrax";
     text-align: center;
     margin-top: 20px;
-    width: 40vw;
+    width: 60vw;
     padding: 5vw;
     background-color: rgb(15, 15, 15);
     border-radius: 10px;
@@ -38,8 +38,9 @@
 @media only screen and (max-width: 768px) {
     .textBox {
         margin-top: 20px;
-        padding: 5vw;
-        width: 100vw;
+        padding-top: 5vw;
+        padding-bottom: 5vw;
+        width: 50vw;
         font-size: smaller;
     }
 }

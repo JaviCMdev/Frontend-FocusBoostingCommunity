@@ -10,9 +10,16 @@
     border-radius: 1em;
     margin: 0.5em;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .inputDesignError {
     border: 0.2em solid red;
+}
+
+@media only screen and (max-width: 412px) {
+    .inputDesign {
+        font-size: 0.8em;
+        width: 18em;
+    }
 }

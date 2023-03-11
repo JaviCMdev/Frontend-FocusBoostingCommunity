@@ -23,3 +23,12 @@ export const getMount = async () => {
 export const getServer = async () => {
     return await axios.get(`${root}servers/getall`);
 }
+
+export const postRentMythicplus = async (body, token) => {
+    let config = {
+        headers: { 
+            'Authorization': 'Bearer ' + token
+          }
+    }
+    return await axios.post(`${root}buymythicplus/newbuymythicplus`, body, config);
+}
