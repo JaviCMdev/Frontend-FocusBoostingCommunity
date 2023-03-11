@@ -64,8 +64,13 @@ export const Profile = () => {
 
     return (
         <div className='profileDesign'>
+            <div className='titleText'>Datos personales</div>
             <div>Nombre: {userRDX.userPass.name}</div>
+            {console.log(userRDX)}
             <div>Email: {userRDX.userPass.token.data.userFound[0].email}</div>
+            <div>Battletag: {userRDX.userPass.token.data.userFound[0].battletag}</div>
+            <div>Discord: {userRDX.userPass.token.data.userFound[0].discord}</div>
+            <div className='titleText'>Historial de pedidos</div>
             <div className='mplusTable'>
                 <div className='titletableText'>Mythic+</div>
                 <table className='rosterDesign'>

@@ -13,6 +13,12 @@
     background-color: rgb(28, 28, 28);
 }
 
+.titleText {
+    font-size: 2em;
+    padding: 0.5em;
+    color: #a929f7;
+}
+
 .mplusTable {
     padding-top: 1em;
     border-collapse: collapse;
