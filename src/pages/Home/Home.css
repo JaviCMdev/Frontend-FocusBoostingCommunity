@@ -15,13 +15,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 98vw;
+    width: 100vw;
     background-color: rgb(28, 28, 28);
+    color: white;
 }
 
 .bannerHome {
     display: flex;
-    width: 98vw;
+    width: 100vw;
 }
 
 .textBox {
@@ -38,7 +39,7 @@
     .textBox {
         margin-top: 20px;
         padding: 5vw;
-        width: 98vw;
+        width: 100vw;
         font-size: smaller;
     }
 }

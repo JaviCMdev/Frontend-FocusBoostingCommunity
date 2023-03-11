@@ -10,6 +10,9 @@ import { CardRaid } from '../../common/CardRaid/CardRaid';
 import { raidData, selectraid } from '../../common/CardRaid/raidSlice';
 import { CardMount } from '../../common/CardMount/CardMount';
 import { mountData, selectmount } from '../../common/CardMount/mountSlice';
+import { userData } from '../User/UserSlice';
+
+
 
 export const Services = () => {
     const dispatch = useDispatch();
@@ -17,6 +20,8 @@ export const Services = () => {
     const [allMythicplus, setAllMythicplus] = useState([]);
     const [allRaid, setAllRaid] = useState([]);
     const [allMount, setAllMount] = useState([]);
+    const detailUsr = useSelector(userData);
+
 
     useEffect(() => {
         if (allMythicplus.length === 0) {
@@ -58,8 +63,11 @@ export const Services = () => {
                 {allMythicplus.map(
                     mythicplus => {
                         return (
-                            <div onClick={() => Choosen(mythicplus)} key={mythicplus._id}>
+                            <div className='cardDesign' onClick={() => Choosen(mythicplus)} key={mythicplus._id}>
                                 <CardMythicplus mythicplus={mythicplus} />
+                                {detailUsr.userPass.token !== '' &&
+                                    <div onClick={() => RentMe()} className='rentDesign'>Comprar</div>
+                                }
                             </div>
                         )
                     }
@@ -70,8 +78,11 @@ export const Services = () => {
                 {allRaid.map(
                     raid => {
                         return (
-                            <div onClick={() => Choosen(raid)} key={raid._id}>
+                            <div className='cardDesign' onClick={() => Choosen(raid)} key={raid._id}>
                                 <CardRaid raid={raid} />
+                                {detailUsr.userPass.token !== '' &&
+                                    <div onClick={() => RentMe()} className='rentDesign'>Comprar</div>
+                                }
                             </div>
                         )
                     }
@@ -79,11 +90,15 @@ export const Services = () => {
             </div>
             <div className="bannerDesign"><img className="bannerImgDesign" src="https://novaboosting.com/img/c632593d-0499-4716-9b62-465e3a248ef4/post-7-fw.jpg" alt="BannerMount" /></div>
             <div className="cardsDesign">
+            {console.log(detailUsr)}
                 {allMount.map(
                     mount => {
                         return (
-                            <div onClick={() => Choosen(mount)} key={mount._id}>
+                            <div className='cardDesign' onClick={() => Choosen(mount)} key={mount._id}>
                                 <CardMount mount={mount} />
+                                {detailUsr.userPass.token !== '' &&
+                                    <div onClick={() => RentMe()} className='rentDesign'>Comprar</div>
+                                }
                             </div>
                         )
                     }

@@ -5,7 +5,7 @@
 
 .servicesDesign {
     display: flex;
-    width: 99vw;
+    /* width: 100vw; */
     padding-top: 10vh;
     background-image: url(../Home/wallpaper.jpg);
     background-position-x: center;
@@ -36,4 +36,37 @@
 .bannerImgDesign {
     width: 30vw;
     border-radius: 1em;
+}
+
+.rentDesign {
+    font-family: 'Contrax';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5em;
+    width: 8em;
+    border-radius: 1em;
+    background: #a929f7;
+    cursor: pointer;
+    color: rgb(28, 28, 28);
+}
+
+.cardDesign {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .rentDesign {
+        font-size: 0.6em;
+        width: 10vw;
+    }
+}
+@media only screen and (max-width: 412px) {
+    .rentDesign {
+        font-size: 0.8em;
+        width: 25vw;
+    }
 }
