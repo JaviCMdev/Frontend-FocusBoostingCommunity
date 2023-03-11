@@ -4,7 +4,7 @@ import { mythicplusData, selectmythicplus } from '../../common/CardMythicplus/my
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import './Services.css';
-import { getMythicplus, getRaid, getMount, postRentMythicplus } from '../../services/apiCalls';
+import { getMythicplus, getRaid, getMount, postRentMythicplus, postRentRaid, postRentMount } from '../../services/apiCalls';
 import { all } from 'axios';
 import { CardRaid } from '../../common/CardRaid/CardRaid';
 import { raidData, selectraid } from '../../common/CardRaid/raidSlice';
@@ -74,6 +74,42 @@ export const Services = () => {
             });
     }
 
+    const RentRaid = (raidid, raidprice) => {
+        let body = {
+            idRaid: raidid,
+            idUser: detailUsr.userPass.user,
+            price: raidprice
+        }
+        postRentRaid(body, detailUsr.userPass.token.data.token)
+            .then(resultado => {
+                setMsg(resultado.data)
+                setTimeout(() => {
+                    navigate('/profile');
+                }, 1500);
+            })
+            .catch(error => {
+                setMsg(error.message);
+            });
+    }
+
+    const RentMount = (mountid, mountprice) => {
+        let body = {
+            idMount: mountid,
+            idUser: detailUsr.userPass.user,
+            price: mountprice
+        }
+        postRentMount(body, detailUsr.userPass.token.data.token)
+            .then(resultado => {
+                setMsg(resultado.data)
+                setTimeout(() => {
+                    navigate('/profile');
+                }, 1500);
+            })
+            .catch(error => {
+                setMsg(error.message);
+            });
+    }
+
     return (
         <div className="servicesDesign">
             <div className="bannerDesign"><img className="bannerImgDesign" src="https://novaboosting.com/img/1edc4179-e063-4f59-8264-b53d4c17c778/post-1-fw.jpg" alt="BannerMythicplus" /></div>
@@ -96,10 +132,10 @@ export const Services = () => {
                 {allRaid.map(
                     raid => {
                         return (
-                            <div className='cardDesign' onClick={() => Choosen(raid)} key={raid._id}>
+                            <div className='cardDesign' key={raid._id}>
                                 <CardRaid raid={raid} />
                                 {detailUsr.userPass.token !== '' &&
-                                    <div onClick={() => RentMe()} className='rentDesign'>Comprar</div>
+                                    <div onClick={() => RentRaid(raid._id, raid.price)} className='rentDesign'>Comprar</div>
                                 }
                             </div>
                         )
@@ -111,10 +147,10 @@ export const Services = () => {
                 {allMount.map(
                     mount => {
                         return (
-                            <div className='cardDesign' onClick={() => Choosen(mount)} key={mount._id}>
+                            <div className='cardDesign' key={mount._id}>
                                 <CardMount mount={mount} />
                                 {detailUsr.userPass.token !== '' &&
-                                    <div onClick={() => RentMe()} className='rentDesign'>Comprar</div>
+                                    <div onClick={() => RentMount(mount._id, mount.price)} className='rentDesign'>Comprar</div>
                                 }
                             </div>
                         )

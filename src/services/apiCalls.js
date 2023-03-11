@@ -32,3 +32,21 @@ export const postRentMythicplus = async (body, token) => {
     }
     return await axios.post(`${root}buymythicplus/newbuymythicplus`, body, config);
 }
+
+export const postRentRaid = async (body, token) => {
+    let config = {
+        headers: { 
+            'Authorization': 'Bearer ' + token
+          }
+    }
+    return await axios.post(`${root}buyraid/newbuyraid`, body, config);
+}
+
+export const postRentMount = async (body, token) => {
+    let config = {
+        headers: { 
+            'Authorization': 'Bearer ' + token
+          }
+    }
+    return await axios.post(`${root}buymount/newbuymount`, body, config);
+}
