@@ -50,3 +50,12 @@ export const postRentMount = async (body, token) => {
     }
     return await axios.post(`${root}buymount/newbuymount`, body, config);
 }
+
+export const allMplus = async (token) => {
+    let config = {
+        headers: { 
+            'Authorization': 'Bearer ' + token
+          }
+    }
+    return await axios.get(`${root}buymythicplus/getall`, config);
+}

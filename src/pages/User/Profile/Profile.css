@@ -5,3 +5,11 @@
 .profileDesign {
     padding-top: 10vw;
 }
+.rosterDesign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-left: 20vw;
+    padding-right: 20vw; */
+    width: 100vw;
+}
