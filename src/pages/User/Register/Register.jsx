@@ -45,7 +45,6 @@ export const Register = () => {
     }
 
     const inputServer = (serverid) => {
-        console.log(serverid)
         setUsuario((prevState) => ({
             ...prevState,
             server: serverid

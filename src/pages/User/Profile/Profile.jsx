@@ -74,7 +74,7 @@ export const Profile = () => {
                 <div className='titletableText'>Mythic+</div>
                 <table className='rosterDesign'>
                     <tr className='cardPurchasemplusDesign'>
-                        {userRDX.userPass.role === 'admin' &&
+                        {userRDX.userPass.role === 'admin' || userRDX.userPass.role === 'booster' &&
                             <td>Usuario</td>
                         }
                         <td>Nombre</td>
@@ -99,7 +99,7 @@ export const Profile = () => {
                 <div className='titletableText'>Raid</div>
                 <table className='rosterDesign'>
                     <tr className='cardPurchasemplusDesign'>
-                        {userRDX.userPass.role === 'admin' &&
+                        {userRDX.userPass.role === 'admin' || userRDX.userPass.role === 'booster' &&
                             <td>Usuario</td>
                         }
                         <td>Nombre</td>
@@ -124,7 +124,7 @@ export const Profile = () => {
                 <div className='titletableText'>Mounts</div>
                 <table className='rosterDesign'>
                     <tr className='cardPurchasemplusDesign'>
-                        {userRDX.userPass.role === 'admin' &&
+                        {userRDX.userPass.role === 'admin' || userRDX.userPass.role === 'booster' &&
                             <td>Usuario</td>
                         }
                         <td>Nombre</td>

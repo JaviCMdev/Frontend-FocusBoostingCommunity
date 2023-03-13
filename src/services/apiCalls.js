@@ -94,8 +94,6 @@ export const Deletebuymplus = async (iduser, idbuymplus) => {
           },
         data : data
     }
-    
-    console.log(config)
     return await axios.delete(`${root}buymythicplus/deletebuymythicplus`, config);
 }
 
@@ -112,8 +110,6 @@ export const Deletebuymount = async (iduser, idbuymount) => {
           },
         data : data
     }
-    
-    console.log(config)
     return await axios.delete(`${root}buymount/deletebuymount`, config);
 }
 
@@ -130,7 +126,119 @@ export const Deletebuyraid = async (iduser, idbuyraid) => {
           },
         data : data
     }
-    
-    console.log(config)
     return await axios.delete(`${root}buyraid/deletebuyraid`, config);
+}
+
+export const Updateraid = async (iduser, idraid, discordname) => {
+
+    let data = JSON.stringify({
+        "_id": iduser,
+        "idbuyraid": idraid,
+        "pending": false,
+        "claimed": true,
+        "claimedby": discordname
+      });
+    
+    let config = {
+        headers: { 
+            'Content-Type': 'application/json'
+          },
+        data : data
+    }
+    
+    return await axios.put(`${root}buyraid/updatebuyraid`, config);
+}
+
+export const Updatemythicplus = async (iduser, idmythicplus, discordname) => {
+
+    let data = JSON.stringify({
+        "_id": iduser,
+        "idbuymythicplus": idmythicplus,
+        "pending": false,
+        "claimed": true,
+        "claimedby": discordname
+      });
+    
+    let config = {
+        headers: { 
+            'Content-Type': 'application/json'
+          },
+        data : data
+    }
+    
+    return await axios.put(`${root}buymythicplus/updatebuymythicplus`, config);
+}
+
+export const Updatemount = async (iduser, idmount, discordname) => {
+
+    let data = JSON.stringify({
+        "_id": iduser,
+        "idbuymount": idmount,
+        "pending": false,
+        "claimed": true,
+        "claimedby": discordname
+      });
+    
+    let config = {
+        headers: { 
+            'Content-Type': 'application/json'
+          },
+        data : data
+    }
+    
+    return await axios.put(`${root}buymount/updatebuymount`, config);
+}
+
+export const Updatemountdone = async (iduser, idmount) => {
+
+    let data = JSON.stringify({
+        "_id": iduser,
+        "idbuymount": idmount,
+        "done": true
+      });
+    
+    let config = {
+        headers: { 
+            'Content-Type': 'application/json'
+          },
+        data : data
+    }
+    
+    return await axios.put(`${root}buymount/updatebuymount`, config);
+}
+
+export const Updatemythicplusdone = async (iduser, idmplus) => {
+
+    let data = JSON.stringify({
+        "_id": iduser,
+        "idbuymythicplus": idmplus,
+        "done": true
+      });
+    
+    let config = {
+        headers: { 
+            'Content-Type': 'application/json'
+          },
+        data : data
+    }
+    
+    return await axios.put(`${root}buymythicplus/updatebuymythicplus`, config);
+}
+
+export const Updateraiddone = async (iduser, idraid) => {
+
+    let data = JSON.stringify({
+        "_id": iduser,
+        "idbuyraid": idraid,
+        "done": true
+      });
+    
+    let config = {
+        headers: { 
+            'Content-Type': 'application/json'
+          },
+        data : data
+    }
+    
+    return await axios.put(`${root}buyraid/updatebuyraid`, config);
 }

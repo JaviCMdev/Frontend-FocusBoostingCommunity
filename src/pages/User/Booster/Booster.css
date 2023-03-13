@@ -34,6 +34,7 @@
 .rosterDesign {
     border: 3px solid #a929f7;
     margin: 0 auto;
+    font-size: 0.8em;
 }
 @media only screen and (max-width: 1150px) {
     .rosterDesign {
@@ -51,4 +52,14 @@
 th,
 td {
     padding: 1em;
+}
+
+.claimDesign {
+    color: yellow;
+    cursor: pointer;
+}
+
+.doneDesign {
+    color: green;
+    cursor: pointer;
 }
