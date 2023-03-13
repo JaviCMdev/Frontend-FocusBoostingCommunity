@@ -71,7 +71,9 @@ export const Admin = () => {
                 <div className='titletableText'>Mythic+</div>
                 <table className='rosterDesign'>
                     <tr className='cardPurchasemplusDesign'>
-                        <td>Usuario</td>
+                        {userRDX.userPass.role === 'admin' || userRDX.userPass.role === 'booster' &&
+                            <td>Usuario</td>
+                        }
                         <td>Nombre</td>
                         <td>Precio</td>
                         <td>Pendiente</td>
