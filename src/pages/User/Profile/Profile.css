@@ -25,6 +25,7 @@
     width: 100vw;
 }
 
+
 .titletableText {
     font-size: 2em;
     color: #a929f7;
@@ -34,6 +35,18 @@
 .rosterDesign {
     border: 3px solid #a929f7;
     margin: 0 auto;
+}
+@media only screen and (max-width: 1150px) {
+    .rosterDesign {
+        font-size: 0.6em;
+        width: 50vw;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .rosterDesign {
+        font-size: 0.4em;
+        width: 40vw;
+    }
 }
 
 th,

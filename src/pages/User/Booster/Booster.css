@@ -3,7 +3,7 @@
     src: url("../Fonts/Contrax.otf");
 }
 
-.adminDesign {
+.boosterDesign {
     text-align: center;
     color: white;
     font-family: 'Contrax';
@@ -51,12 +51,4 @@
 th,
 td {
     padding: 1em;
-}
-
-.deleteDesign {
-    color: red;
-    cursor: pointer;
-}
-.deleteDesign:hover {
-    color:white
 }

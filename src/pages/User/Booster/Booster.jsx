@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Profile.css';
+import './Booster.css';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import { userData } from '../userSlice';
@@ -9,7 +9,7 @@ import { CardPurchaseraid } from '../../../common/CardPurchaseraid/CardPurchaser
 import { CardPurchasemount } from '../../../common/CardPurchasemount/CardPurchasemount';
 
 
-export const Profile = () => {
+export const Booster = () => {
     const navigate = useNavigate();
     const userRDX = useSelector(userData);
     const [allMythicplus, setAllMplus] = useState([]);
@@ -18,7 +18,7 @@ export const Profile = () => {
 
 
     useEffect(() => {
-        if (userRDX.userPass.token === '') {
+        if (userRDX.userPass.role !== 'booster') {
             navigate("/");
         }
     }, []);
@@ -34,7 +34,6 @@ export const Profile = () => {
 
     }, [allMythicplus]);
 
-    const filterNamemplus = allMythicplus.filter((name) => name.idUser.name === userRDX.userPass.name)
 
     useEffect(() => {
         if (allRaid.length === 0) {
@@ -47,7 +46,6 @@ export const Profile = () => {
 
     }, [allRaid]);
 
-    const filterNameraid = allRaid.filter((name) => name.idUser.name === userRDX.userPass.name)
 
     useEffect(() => {
         if (allMount.length === 0) {
@@ -60,10 +58,8 @@ export const Profile = () => {
 
     }, [allMount]);
 
-    const filterNamemount = allMount.filter((name) => name.idUser.name === userRDX.userPass.name)
-
     return (
-        <div className='profileDesign'>
+        <div className='boosterDesign'>
             <div className='titleText'>Datos personales</div>
             <div>Nombre: {userRDX.userPass.name}</div>
             <div>Email: {userRDX.userPass.token.data.userFound[0].email}</div>
@@ -74,9 +70,7 @@ export const Profile = () => {
                 <div className='titletableText'>Mythic+</div>
                 <table className='rosterDesign'>
                     <tr className='cardPurchasemplusDesign'>
-                        {userRDX.userPass.role === 'admin' &&
-                            <td>Usuario</td>
-                        }
+                        <td>Usuario</td>
                         <td>Nombre</td>
                         <td>Precio</td>
                         <td>Pendiente</td>
@@ -85,7 +79,7 @@ export const Profile = () => {
                         <td>Reclamado por</td>
                     </tr>
                     {allMythicplus.length > 0 &&
-                        filterNamemplus.map(
+                        allMythicplus.map(
                             mplus => {
                                 return (
                                     <CardPurchasemplus mplus={mplus} key={mplus._id} />
@@ -99,9 +93,7 @@ export const Profile = () => {
                 <div className='titletableText'>Raid</div>
                 <table className='rosterDesign'>
                     <tr className='cardPurchasemplusDesign'>
-                        {userRDX.userPass.role === 'admin' &&
-                            <td>Usuario</td>
-                        }
+                        <td>Usuario</td>
                         <td>Nombre</td>
                         <td>Precio</td>
                         <td>Pendiente</td>
@@ -110,7 +102,7 @@ export const Profile = () => {
                         <td>Reclamado por</td>
                     </tr>
                     {allRaid.length > 0 &&
-                        filterNameraid.map(
+                        allRaid.map(
                             raid => {
                                 return (
                                     <CardPurchaseraid raid={raid} key={raid._id} />
@@ -124,9 +116,7 @@ export const Profile = () => {
                 <div className='titletableText'>Mounts</div>
                 <table className='rosterDesign'>
                     <tr className='cardPurchasemplusDesign'>
-                        {userRDX.userPass.role === 'admin' &&
-                            <td>Usuario</td>
-                        }
+                        <td>Usuario</td>
                         <td>Nombre</td>
                         <td>Precio</td>
                         <td>Pendiente</td>
@@ -135,7 +125,7 @@ export const Profile = () => {
                         <td>Reclamado por</td>
                     </tr>
                     {allMount.length > 0 &&
-                        filterNamemount.map(
+                        allMount.map(
                             mount => {
                                 return (
                                     <CardPurchasemount mount={mount} key={mount._id} />

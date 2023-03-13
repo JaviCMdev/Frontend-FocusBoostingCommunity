@@ -36,6 +36,9 @@ export const Header = () => {
                 {datosReduxUsuario.userPass.role === "admin" &&
                     <div onClick={() => navigate("/admin")} className='linkDesign'>Admin</div>
                 }
+                {datosReduxUsuario.userPass.role === "booster" &&
+                    <div onClick={() => navigate("/booster")} className='linkDesign'>Boosts</div>
+                }
                 {datosReduxUsuario.userPass.token !== "" ?
                     (<>
                         <div onClick={() => navigate("/profile")} className='linkDesign' >{datosReduxUsuario.userPass?.name}</div>
