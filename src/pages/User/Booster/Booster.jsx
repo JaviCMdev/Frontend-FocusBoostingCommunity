@@ -25,7 +25,7 @@ export const Booster = () => {
 
     useEffect(() => {
         if (allMythicplus.length === 0) {
-            allMplus()
+            allMplus(userRDX.userPass.token.data.token)
                 .then(resultado => {
                     setAllMplus(resultado.data);
                 })
@@ -37,7 +37,7 @@ export const Booster = () => {
 
     useEffect(() => {
         if (allRaid.length === 0) {
-            allRaids()
+            allRaids(userRDX.userPass.token.data.token)
                 .then(resultado => {
                     setAllRaid(resultado.data);
                 })
@@ -49,7 +49,7 @@ export const Booster = () => {
 
     useEffect(() => {
         if (allMount.length === 0) {
-            allMounts()
+            allMounts(userRDX.userPass.token.data.token)
                 .then(resultado => {
                     setAllMount(resultado.data);
                 })
@@ -57,6 +57,7 @@ export const Booster = () => {
         };
 
     }, [allMount]);
+
 
     return (
         <div className='boosterDesign'>
@@ -82,7 +83,7 @@ export const Booster = () => {
                         allMythicplus.map(
                             mplus => {
                                 return (
-                                    <CardPurchasemplus mplus={mplus} key={mplus._id} />
+                                    <CardPurchasemplus mplus={mplus} setAllMplus = {setAllMplus} key={mplus._id} />
                                 )
                             }
                         )
@@ -105,7 +106,7 @@ export const Booster = () => {
                         allRaid.map(
                             raid => {
                                 return (
-                                    <CardPurchaseraid raid={raid} key={raid._id} />
+                                    <CardPurchaseraid raid={raid} setAllRaid = {setAllRaid} key={raid._id} />
                                 )
                             }
                         )
@@ -128,7 +129,7 @@ export const Booster = () => {
                         allMount.map(
                             mount => {
                                 return (
-                                    <CardPurchasemount mount={mount} key={mount._id} />
+                                    <CardPurchasemount mount={mount} setAllMount = {setAllMount} key={mount._id} />
                                 )
                             }
                         )

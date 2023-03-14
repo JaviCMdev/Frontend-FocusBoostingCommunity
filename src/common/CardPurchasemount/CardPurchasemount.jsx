@@ -5,7 +5,7 @@ import './CardPurchasemount.css';
 import { Deletebuymount, Updatemount, Updatemountdone } from '../../services/apiCalls';
 
 
-export const CardPurchasemount = ({ mount }) => {
+export const CardPurchasemount = ({ mount, setAllMount }) => {
 
     const userRDX = useSelector(userData);
     const [msg, setMsg] = useState('');
@@ -13,9 +13,10 @@ export const CardPurchasemount = ({ mount }) => {
 
     const Deletemount = (mountid) => {
         let idmount = mountid
-        Deletebuymount(userRDX.userPass.user, idmount)
+        Deletebuymount(userRDX.userPass.user, idmount, userRDX.userPass.token.data.token)
             .then(resultado => {
                 setMsg(resultado.data)
+                setAllMount([])
             })
             .catch(error => {
                 setMsg(error.message);
@@ -24,9 +25,10 @@ export const CardPurchasemount = ({ mount }) => {
 
     const Claimmount = (mountid) => {
         let idmount = mountid
-        Updatemount(userRDX.userPass.user, idmount, userRDX.userPass.token.data.userFound[0].discord)
+        Updatemount(userRDX.userPass.user, idmount, userRDX.userPass.token.data.userFound[0].discord, userRDX.userPass.token.data.token)
             .then(resultado => {
                 setMsg(resultado.data)
+                setAllMount([])
             })
             .catch(error => {
                 setMsg(error.message);
@@ -35,9 +37,10 @@ export const CardPurchasemount = ({ mount }) => {
 
     const Donemount = (mountid) => {
         let idmount = mountid
-        Updatemountdone(userRDX.userPass.user, idmount)
+        Updatemountdone(userRDX.userPass.user, idmount, userRDX.userPass.token.data.token)
             .then(resultado => {
                 setMsg(resultado.data)
+                setAllMount([])
             })
             .catch(error => {
                 setMsg(error.message);

@@ -78,167 +78,149 @@ export const allMounts = async (token) => {
     return await axios.get(`${root}buymount/getall`, config);
 }
 
-export const Deletebuymplus = async (iduser, idbuymplus) => {
-    // let body = {
-    //     _id: iduser,
-    //     idmythicplus: idbuymplus
-    // }
-    let data = JSON.stringify({
+export const Deletebuymplus = async (iduser, idbuymplus, token) => {
+
+    let data = {
         "_id": iduser,
         "idmythicplus": idbuymplus
-      });
-    
-    let config = {
-        headers: { 
-            'Content-Type': 'application/json'
-          },
-        data : data
+    };
+
+    let headers = {
+        'Authorization': 'Bearer ' + token
     }
-    return await axios.delete(`${root}buymythicplus/deletebuymythicplus`, config);
+    return await axios.delete(`${root}buymythicplus/deletebuymythicplus`, { headers, data });
 }
 
-export const Deletebuymount = async (iduser, idbuymount) => {
+export const Deletebuymount = async (iduser, idbuymount, token) => {
 
-    let data = JSON.stringify({
+    let data = {
         "_id": iduser,
         "idmount": idbuymount
-      });
-    
-    let config = {
-        headers: { 
-            'Content-Type': 'application/json'
-          },
-        data : data
+    };
+
+    let headers = {
+        'Authorization': 'Bearer ' + token
     }
-    return await axios.delete(`${root}buymount/deletebuymount`, config);
+    return await axios.delete(`${root}buymount/deletebuymount`, { headers, data });
 }
 
-export const Deletebuyraid = async (iduser, idbuyraid) => {
+export const Deletebuyraid = async (iduser, idbuyraid, token) => {
 
-    let data = JSON.stringify({
+    let data = {
         "_id": iduser,
         "idraid": idbuyraid
-      });
-    
-    let config = {
-        headers: { 
-            'Content-Type': 'application/json'
-          },
-        data : data
+    };
+
+    let headers = {
+        'Authorization': 'Bearer ' + token
     }
-    return await axios.delete(`${root}buyraid/deletebuyraid`, config);
+    return await axios.delete(`${root}buyraid/deletebuyraid`, { headers, data });
 }
 
-export const Updateraid = async (iduser, idraid, discordname) => {
+export const Updateraid = async (iduser, idraid, discordname, token) => {
 
-    let data = JSON.stringify({
+    let data = {
         "_id": iduser,
         "idbuyraid": idraid,
         "pending": false,
         "claimed": true,
         "claimedby": discordname
-      });
-    
+    };
+
     let config = {
-        headers: { 
-            'Content-Type': 'application/json'
-          },
-        data : data
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
     }
-    
-    return await axios.put(`${root}buyraid/updatebuyraid`, config);
+
+    return await axios.put(`${root}buyraid/updatebuyraid`, data, config);
 }
 
-export const Updatemythicplus = async (iduser, idmythicplus, discordname) => {
+export const Updatemythicplus = async (iduser, idmythicplus, discordname, token) => {
 
-    let data = JSON.stringify({
+    let data = {
         "_id": iduser,
         "idbuymythicplus": idmythicplus,
         "pending": false,
         "claimed": true,
         "claimedby": discordname
-      });
-    
+    };
+
     let config = {
-        headers: { 
-            'Content-Type': 'application/json'
-          },
-        data : data
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
     }
-    
-    return await axios.put(`${root}buymythicplus/updatebuymythicplus`, config);
+
+    return await axios.put(`${root}buymythicplus/updatebuymythicplus`, data, config);
 }
 
-export const Updatemount = async (iduser, idmount, discordname) => {
+export const Updatemount = async (iduser, idmount, discordname, token) => {
 
-    let data = JSON.stringify({
+    let data = {
         "_id": iduser,
         "idbuymount": idmount,
         "pending": false,
         "claimed": true,
         "claimedby": discordname
-      });
-    
+    };
+
     let config = {
-        headers: { 
-            'Content-Type': 'application/json'
-          },
-        data : data
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
     }
-    
-    return await axios.put(`${root}buymount/updatebuymount`, config);
+
+    return await axios.put(`${root}buymount/updatebuymount`, data, config);
 }
 
-export const Updatemountdone = async (iduser, idmount) => {
+export const Updatemountdone = async (iduser, idmount, token) => {
 
-    let data = JSON.stringify({
+    let data = {
         "_id": iduser,
         "idbuymount": idmount,
         "done": true
-      });
-    
+    };
+
     let config = {
-        headers: { 
-            'Content-Type': 'application/json'
-          },
-        data : data
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
     }
-    
-    return await axios.put(`${root}buymount/updatebuymount`, config);
+
+    return await axios.put(`${root}buymount/updatebuymount`, data, config);
 }
 
-export const Updatemythicplusdone = async (iduser, idmplus) => {
+export const Updatemythicplusdone = async (iduser, idmplus, token) => {
 
-    let data = JSON.stringify({
+    let data = {
         "_id": iduser,
         "idbuymythicplus": idmplus,
         "done": true
-      });
-    
+    };
+
     let config = {
-        headers: { 
-            'Content-Type': 'application/json'
-          },
-        data : data
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
     }
-    
-    return await axios.put(`${root}buymythicplus/updatebuymythicplus`, config);
+
+    return await axios.put(`${root}buymythicplus/updatebuymythicplus`, data, config);
 }
 
-export const Updateraiddone = async (iduser, idraid) => {
+export const Updateraiddone = async (iduser, idraid, token) => {
 
-    let data = JSON.stringify({
+    let data = {
         "_id": iduser,
         "idbuyraid": idraid,
         "done": true
-      });
-    
+    };
+
     let config = {
-        headers: { 
-            'Content-Type': 'application/json'
-          },
-        data : data
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
     }
-    
-    return await axios.put(`${root}buyraid/updatebuyraid`, config);
+
+    return await axios.put(`${root}buyraid/updatebuyraid`, data, config);
 }

@@ -5,17 +5,17 @@ import './CardPurchasemplus.css';
 import { Deletebuymplus, Updatemythicplus, Updatemythicplusdone } from '../../services/apiCalls';
 
 
-export const CardPurchasemplus = ({ mplus }) => {
+export const CardPurchasemplus = ({ mplus, setAllMplus }) => {
 
     const userRDX = useSelector(userData);
     const [msg, setMsg] = useState('');
 
-
     const Deletemplus = (mythicplusid) => {
         let idmythicplus = mythicplusid
-        Deletebuymplus(userRDX.userPass.user, idmythicplus)
+        Deletebuymplus(userRDX.userPass.user, idmythicplus, userRDX.userPass.token.data.token)
             .then(resultado => {
                 setMsg(resultado.data)
+                setAllMplus([])
             })
             .catch(error => {
                 setMsg(error.message);
@@ -24,9 +24,10 @@ export const CardPurchasemplus = ({ mplus }) => {
 
     const Claimmplus = (mythicplusid) => {
         let idmythicplus = mythicplusid
-        Updatemythicplus(userRDX.userPass.user, idmythicplus, userRDX.userPass.token.data.userFound[0].discord)
+        Updatemythicplus(userRDX.userPass.user, idmythicplus, userRDX.userPass.token.data.userFound[0].discord, userRDX.userPass.token.data.token)
             .then(resultado => {
                 setMsg(resultado.data)
+                setAllMplus([])
             })
             .catch(error => {
                 setMsg(error.message);
@@ -35,9 +36,10 @@ export const CardPurchasemplus = ({ mplus }) => {
 
     const Donemplus = (mythicplusid) => {
         let idmythicplus = mythicplusid
-        Updatemythicplusdone(userRDX.userPass.user, idmythicplus)
+        Updatemythicplusdone(userRDX.userPass.user, idmythicplus, userRDX.userPass.token.data.token)
             .then(resultado => {
                 setMsg(resultado.data)
+                setAllMplus([])
             })
             .catch(error => {
                 setMsg(error.message);

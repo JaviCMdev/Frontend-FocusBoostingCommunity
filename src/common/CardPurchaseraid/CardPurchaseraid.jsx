@@ -5,16 +5,17 @@ import './CardPurchaseraid.css';
 import { Deletebuyraid, Updateraid, Updateraiddone } from '../../services/apiCalls';
 
 
-export const CardPurchaseraid = ({ raid }) => {
+export const CardPurchaseraid = ({ raid, setAllRaid }) => {
 
     const userRDX = useSelector(userData);
     const [msg, setMsg] = useState('');
 
     const Deleteraid = (raidid) => {
         let idraid = raidid
-        Deletebuyraid(userRDX.userPass.user, idraid)
+        Deletebuyraid(userRDX.userPass.user, idraid, userRDX.userPass.token.data.token)
             .then(resultado => {
                 setMsg(resultado.data)
+                setAllRaid([])
             })
             .catch(error => {
                 setMsg(error.message);
@@ -23,9 +24,10 @@ export const CardPurchaseraid = ({ raid }) => {
 
     const Claimraid = (raidid) => {
         let idraid = raidid
-        Updateraid(userRDX.userPass.user, idraid, userRDX.userPass.token.data.userFound[0].discord)
+        Updateraid(userRDX.userPass.user, idraid, userRDX.userPass.token.data.userFound[0].discord, userRDX.userPass.token.data.token)
             .then(resultado => {
                 setMsg(resultado.data)
+                setAllRaid([])
             })
             .catch(error => {
                 setMsg(error.message);
@@ -34,9 +36,10 @@ export const CardPurchaseraid = ({ raid }) => {
 
     const Doneraid = (raidid) => {
         let idraid = raidid
-        Updateraiddone(userRDX.userPass.user, idraid)
+        Updateraiddone(userRDX.userPass.user, idraid, userRDX.userPass.token.data.token)
             .then(resultado => {
                 setMsg(resultado.data)
+                setAllRaid([])
             })
             .catch(error => {
                 setMsg(error.message);
